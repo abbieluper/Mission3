@@ -1,0 +1,58 @@
+﻿@*Abbie Luper*@
+@*A "Grade Calculator" form that takes as input a percentage scored for
+    each grade category listed in the syllabus*@
+
+@{
+    ViewData["Title"] = "Grade Calculator";
+    ViewData["Header"] = "Calculator";
+}
+
+@model CalculatorModel; 
+
+
+<br />
+<fieldset style="width: 250px;">
+    <form method="post">
+        <h4 class="Headers">Grade Calculator</h4>
+        <br />
+        <p>Enter percentage scored for each grade category</p>
+        <!--assignments: 55%-->
+        <label for="assignments">Assignments:</label>
+        <br />
+        <input id="assignments" asp-for="assignments" type="number" min="0" max="100" required />
+        <br /><br />
+
+        <!--group project: 5%-->
+        <label for="groupProject">Group Project:</label>
+        <br />
+        <input id="groupProject" asp-for="groupProject" type="number" min="0" max="100" required />
+        <br /><br />
+
+        <!--quizzes: 10%-->
+        <label>Quizzes:</label>
+        <br />
+        <input id="quizzes" asp-for="quizzes" type="number" min="0" max="100" required />
+        <br /><br />
+
+        <!--exams: 20%-->
+        <label>Exams:</label>
+        <br />
+        <input id="exams" asp-for="exams" type="number" min="0" max="100" required />
+        <br /><br />
+
+        <!--intex: 10%-->
+        <label>INTEX:</label>
+        <br />
+        <input id="intex" asp-for="intex" type="number" min="0" max="100" required />
+        <br /><br />
+
+        <input id="submitButton" type="submit" value="Calculate Grade" class="button" />
+        <br /><br />
+        <div asp-validation-summary="All"></div>
+    </form>
+    <p id="myOutput"></p>
+    <br />
+</fieldset>
+
+
+
